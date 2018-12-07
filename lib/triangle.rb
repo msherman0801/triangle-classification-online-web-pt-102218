@@ -17,7 +17,11 @@ class Triangle
   def triangle?
     @@args.each do |i| 
       if i == 0 || i < 0 
+<<<<<<< HEAD
          raise TriangleError
+=======
+        return false 
+>>>>>>> 428072764866aaf8cc084340a43bf014191fe51f
       end
     end
     true 
@@ -25,6 +29,7 @@ class Triangle
   
   
   def kind
+<<<<<<< HEAD
     if triangle? == true
       if @arg1 == @arg2 && @arg1 == @arg3
         return :equilateral
@@ -35,6 +40,21 @@ class Triangle
       end
     end
   end
+=======
+  if triangle?
+    binding.pry
+    if @arg1 == @arg2 && @arg1 == @arg3
+      return :equilateral
+    elsif @arg1 == @arg2 || @arg1 == @arg3 || @arg2 == @arg3
+      return :isosceles
+    elsif @arg1 != @arg3 && @arg1 != @arg2
+      return :scalene
+    elsif @arg1 == 0 || @arg2 == 0 || @arg3 == 0
+      raise TriangleError
+    end
+  end
+  end
+>>>>>>> 428072764866aaf8cc084340a43bf014191fe51f
   
   class TriangleError < StandardError
   end
